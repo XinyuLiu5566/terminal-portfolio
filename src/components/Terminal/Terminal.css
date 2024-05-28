@@ -1,0 +1,154 @@
+/* src/Terminal.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+
+body {
+  background-color: #1f1c19; /* Dark background color */
+  color: #b59472;
+  font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal {
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+  max-height: 100vh; /* Ensure the terminal doesn't grow beyond the viewport */
+  overflow-y: auto;
+}
+
+.welcome,
+.output {
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+.inputLine {
+  display: flex;
+}
+
+.command-input {
+  color: #4cba9d; /* User name color */
+  font-family: "Fira Code", monospace;
+  margin-left: 5px;
+}
+
+.command-dir {
+  color: #4cba9d; /* User name color */
+  font-family: "Fira Code", monospace;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 2px #00f0ff, 0 0 4px #00f0ff, 0 0 6px #00f0ff,
+      0 0 8px #00f0ff;
+  }
+  50% {
+    text-shadow: 0 0 4px #00f0ff, 0 0 8px #00f0ff, 0 0 12px #00f0ff,
+      0 0 16px #00f0ff;
+  }
+  100% {
+    text-shadow: 0 0 2px #00f0ff, 0 0 4px #00f0ff, 0 0 6px #00f0ff,
+      0 0 8px #00f0ff;
+  }
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-button {
+  padding: "10px";
+  font-size: "16px";
+  cursor: "pointer";
+  background-color: #b59472;
+  border: 1px solid #b59472;
+  border-radius: 4px;
+}
+
+.command-output {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.command-name {
+  color: #58a6ff; /* Command name color */
+  display: inline-block;
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+  width: 100px; /* Adjust width as needed */
+}
+
+.command-description {
+  color: #b59472; /* Command description color */
+  display: inline-block;
+  margin-left: 10px; /* Space between command and description */
+}
+
+input {
+  background-color: #1f1c19; /* Dark background color */
+  border: none;
+  color: #b59472;
+  flex: 1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  outline: none;
+}
+
+#content {
+  padding: 20px;
+}
+
+.output {
+  color: #b59472;
+}
+
+a {
+  color: #58a6ff; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.help-command div {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-links-section {
+  margin-top: 10px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.social-number {
+  color: #00ff99;
+  margin-right: 5px;
+}
+
+.social-link {
+  color: #00afff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.social-link:hover {
+  color: #00ff99;
+}
+
+.social-url {
+  color: #c5c6c7;
+}
