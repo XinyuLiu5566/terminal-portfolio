@@ -175,8 +175,8 @@ function Terminal() {
         ))}
       </div>
       <div className="inputLine">
-        <span className="command-input">guest@ChrisLiu.com</span>
-        <div className="command-input">:~$ </div>
+        <span className="command-dir">guest@ChrisLiu.com</span>
+        <div className="command-dir">:~$ </div>
         <input
           type="text"
           className="command-input"
