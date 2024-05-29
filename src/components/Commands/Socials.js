@@ -12,7 +12,6 @@ export const socialLinks = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/xinyu-liu-843038193/",
   },
-  // Add more social links here if needed
 ];
 
 const Socials = () => (

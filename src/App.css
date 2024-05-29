@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+/* src/Terminal.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+
+body {
+  --text-shining: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+  --primary-color: #58a6ff;
+  --secondary-color: #b59472;
+  --primary-font: "Fira Code", monospace;
+  background-color: #1f1c19; /* Dark background color */
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.terminal {
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+  max-height: 100vh; /* Ensure the terminal doesn't grow beyond the viewport */
+  overflow-y: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.output {
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome-banner {
+  white-space: pre; /* Preserve spaces and line breaks */
+  font-family: var(--primary-font); /* Ensure the correct font is applied */
+  color: var(--secondary-color); /* Set the text color */
+}
+
+.ascii-container {
   display: flex;
-  flex-direction: column;
+  justify-content: start;
+  gap: 100px;
+}
+
+.ascii-art {
+  white-space: pre; /* Preserve spaces and line breaks */
+}
+
+.ascii-name {
+  margin-top: 50px;
+}
+
+.inputLine {
+  display: flex;
+  margin: 0;
+  padding: 0; /* Remove padding if any */
+}
+
+.command-dir {
+  color: #4cba9d; /* User name color */
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+}
+
+.command-input {
+  color: #4cba9d; /* User name color */
+  font-family: var(--primary-font);
+  margin-left: 5px; /* Add space between prompt and input */
+  padding: 0;
+}
+
+input {
+  background-color: #1f1c19; /* Dark background color */
+  border: none;
+  flex: 1;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 2px #00f0ff, 0 0 4px #00f0ff, 0 0 6px #00f0ff,
+      0 0 8px #00f0ff;
+  }
+  50% {
+    text-shadow: 0 0 4px #00f0ff, 0 0 8px #00f0ff, 0 0 12px #00f0ff,
+      0 0 16px #00f0ff;
+  }
+  100% {
+    text-shadow: 0 0 2px #00f0ff, 0 0 4px #00f0ff, 0 0 6px #00f0ff,
+      0 0 8px #00f0ff;
+  }
+}
+
+.email {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.email-button {
+  padding: "10px";
+  font-size: "16px";
+  cursor: "pointer";
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-unique-color {
+  color: var(--primary-color);
+  text-shadow: var(--text-shining);
+}
+
+.command-output {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.command-name {
+  color: var(--primary-color); /* Command name color */
+  display: inline-block;
+  text-shadow: var(--text-shining);
+  width: 300px; /* Adjust width as needed */
+}
+
+.command-description {
+  color: var(--secondary-color); /* Command description color */
+  display: inline-block;
+  margin-left: 10px; /* Space between command and description */
+}
+
+#content {
+  padding: 20px;
+}
+
+.output {
+  color: var(--secondary-color);
+}
+
+a {
+  color: #58a6ff; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.help-command div {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-links-section {
+  margin-top: 10px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.social-number {
+  color: #58a6ff;
+  text-shadow: var(--text-shining);
+  margin-right: 5px;
+}
+
+.social-link {
+  color: #58a6ff;
+  text-shadow: var(--text-shining);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.social-link:hover {
+  color: #00ff99;
+}
+
+.social-url {
+  color: var(--secondary-color);
+}
+
+.info-container {
+  line-height: 1.2;
+  max-width: 850px;
+}
+
+.info-container strong {
+  color: var(--primary-color);
 }

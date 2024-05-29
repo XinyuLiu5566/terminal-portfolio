@@ -7,4 +7,8 @@ export const commandFiles = {
   clear: "",
   history: "History",
   email: "Email",
+  banner: "WelcomeBanner",
+  quote: "Quote",
+  education: "Education",
+  "little-mysterious-game": "GuessNumberGame.js",
 };
