@@ -157,38 +157,45 @@ a:hover {
   flex-direction: row;
 }
 
-.social-links-section .project-links-section {
+.social-links-section,
+.project-links-section {
   margin-top: 10px;
 }
 
-.social-links .project-links {
+.social-links,
+.project-links {
   margin-top: 10px;
 }
 
-.social-link-item .project-link-item {
+.social-link-item,
+.project-link-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
 
-.social-number .project-number {
+.social-number,
+.project-number {
   color: #58a6ff;
   text-shadow: var(--text-shining);
   margin-right: 5px;
 }
 
-.social-link .project-link {
+.social-link,
+.project-link {
   color: #58a6ff;
   text-shadow: var(--text-shining);
   text-decoration: none;
   margin-right: 10px;
 }
 
-.social-link:hover .project-link:hover {
+.social-link:hover,
+.project-link:hover {
   color: #00ff99;
 }
 
-.social-url .project-url {
+.social-url,
+.project-url {
   color: var(--secondary-color);
 }
 

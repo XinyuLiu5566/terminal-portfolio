@@ -4,7 +4,7 @@ const Email = () => (
     <p>Do not email me, I'm just kidding 😅</p>
     <p>You can email me at: xinyus0117@gmail.com</p>
     <div className="email">
-      <span>Or Email me by clicking the button:</span>
+      <span>Or Email me directly by clicking the button:</span>
       <a href="mailto:xinyus0117@gmail.com">
         <button className="my-button">Email Me</button>
       </a>

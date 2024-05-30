@@ -16,7 +16,6 @@ export const socialLinks = [
 
 const Socials = () => (
   <div className="social-links-section">
-    <p>Here are my social links:</p>
     <div className="social-links">
       {socialLinks.map((link) => (
         <div key={link.id} className="social-link-item">

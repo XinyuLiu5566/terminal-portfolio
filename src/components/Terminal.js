@@ -86,7 +86,7 @@ function Terminal() {
         const projectId = parseInt(command.split(" ")[2], 10);
         const projectLink = projectLinks.find((link) => link.id === projectId);
         if (projectLink) {
-          window.open(projectLink.url, "_blank");
+          window.open(projectLink.demo, "_blank");
           commandOutput = `Navigating to ${projectLink.name}...`;
         } else {
           commandOutput =
