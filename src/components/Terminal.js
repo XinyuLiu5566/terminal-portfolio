@@ -3,13 +3,11 @@ import { commandFiles } from "./Commands";
 import { socialLinks } from "./Commands/Socials";
 import { projectLinks } from "./Commands/Projects";
 import WelcomeBanner from "./Commands/WelcomeBanner";
+import InputLine from "./InputLine";
 
 function Terminal() {
   const [history, setHistory] = useState([
-    <div className="inputLine">
-      <span className="command-dir">guest@ChrisLiu.com:~$ </span>
-      <span className="command-input">welcome</span>
-    </div>,
+    <InputLine key="initial-command" history={[]} command="welcome" />,
     <WelcomeBanner key="initial-banner" />,
   ]);
   const [input, setInput] = useState("");
@@ -25,6 +23,7 @@ function Terminal() {
     }
   }, [history]);
 
+  // make cursor to point at end of command input when pressing up and down arrow
   useEffect(() => {
     if (inputRef.current) {
       const length = inputRef.current.value.length;
@@ -40,10 +39,7 @@ function Terminal() {
       const command = input.trim();
       const newHistory = [
         ...history,
-        <div className="inputLine" key={history.length}>
-          <span className="command-dir">guest@chrisliu.com:~$ </span>
-          <span className="command-input">{command}</span>
-        </div>,
+        <InputLine history={history} command={command} />,
       ];
 
       let newCommandHistory = [...commandHistory, command];
@@ -152,7 +148,7 @@ function Terminal() {
         ))}
       </div>
       <div className="inputLine">
-        <span className="command-dir">guest@ChrisLiu.com</span>
+        <span className="command-dir">guest@chrisliu.com</span>
         <div className="command-dir">:~$ </div>
         <input
           type="text"
