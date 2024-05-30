@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { commandFiles } from "./Commands";
 import { socialLinks } from "./Commands/Socials";
+import { projectLinks } from "./Commands/Projects";
 import WelcomeBanner from "./Commands/WelcomeBanner";
 
 function Terminal() {
@@ -16,6 +17,23 @@ function Terminal() {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const terminalRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Scroll to bottom when history updates
+  useEffect(() => {
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+    }
+  }, [history]);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      const length = inputRef.current.value.length;
+      inputRef.current.focus();
+      setTimeout(() => {
+        inputRef.current.setSelectionRange(length, length);
+      }, 0);
+    }
+  }, [historyIndex]);
 
   const handleInput = async (event) => {
     if (event.key === "Enter") {
@@ -37,16 +55,6 @@ function Terminal() {
           setCommandHistory(newCommandHistory);
           setHistoryIndex(-1);
           return;
-        } else if (command.startsWith("socials go ")) {
-          const socialId = parseInt(command.split(" ")[2], 10);
-          const socialLink = socialLinks.find((link) => link.id === socialId);
-          if (socialLink) {
-            window.open(socialLink.url, "_blank");
-            commandOutput = `Navigating to ${socialLink.name}...`;
-          } else {
-            commandOutput =
-              "Invalid social number. Use 'socials' to see the list of available social links.";
-          }
         } else {
           try {
             const Content = (
@@ -63,6 +71,26 @@ function Terminal() {
           } catch (error) {
             commandOutput = "Error loading command content.";
           }
+        }
+      } else if (command.startsWith("socials go ")) {
+        const socialId = parseInt(command.split(" ")[2], 10);
+        const socialLink = socialLinks.find((link) => link.id === socialId);
+        if (socialLink) {
+          window.open(socialLink.url, "_blank");
+          commandOutput = `Navigating to ${socialLink.name}...`;
+        } else {
+          commandOutput =
+            "Invalid social number. Use 'socials' to see the list of available social links.";
+        }
+      } else if (command.startsWith("projects go ")) {
+        const projectId = parseInt(command.split(" ")[2], 10);
+        const projectLink = projectLinks.find((link) => link.id === projectId);
+        if (projectLink) {
+          window.open(projectLink.url, "_blank");
+          commandOutput = `Navigating to ${projectLink.name}...`;
+        } else {
+          commandOutput =
+            "Invalid social number. Use 'socials' to see the list of available social links.";
         }
       } else {
         commandOutput =
@@ -115,46 +143,6 @@ function Terminal() {
       }
     }
   };
-
-  // Scroll to bottom when history updates
-  // useEffect(() => {
-  //   if (terminalRef.current) {
-  //     terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-  //   }
-  // }, [history]);
-
-  // // Move cursor to the end of the input field whenever the input value changes
-  // useEffect(() => {
-  //   if (inputRef.current) {
-  //     const length = inputRef.current.value.length;
-  //     inputRef.current.setSelectionRange(length, length);
-  //   }
-  // }, [input]);
-
-  // // Focus the input field when historyIndex changes
-  // useEffect(() => {
-  //   if (inputRef.current) {
-  //     const length = inputRef.current.value.length;
-  //     inputRef.current.focus();
-  //     setTimeout(() => {
-  //       inputRef.current.setSelectionRange(length, length);
-  //     }, 0);
-  //   }
-  // }, [historyIndex]);
-
-  // Add event listener to focus the input field when clicking anywhere in the window
-  // useEffect(() => {
-  //   const handleWindowClick = () => {
-  //     if (inputRef.current) {
-  //       inputRef.current.focus();
-  //     }
-  //   };
-
-  //   window.addEventListener("click", handleWindowClick);
-  //   return () => {
-  //     window.removeEventListener("click", handleWindowClick);
-  //   };
-  // }, []);
 
   return (
     <div className="terminal" ref={terminalRef}>

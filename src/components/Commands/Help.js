@@ -45,7 +45,7 @@ const Help = () => (
       <span className="command-description">My email</span>
     </div>
     <div>
-      <span className="command-name">little-mysterious-game</span>{" "}
+      <span className="command-name">game</span>{" "}
       <span className="command-description">See what you got</span>
     </div>
     <div>
@@ -54,7 +54,7 @@ const Help = () => (
     </div>
     <div>
       <span className="command-name">clear</span>{" "}
-      <span className="command-description">Clear terminal content</span>
+      <span className="command-description">Clear terminal</span>
     </div>
   </div>
 );

@@ -102,13 +102,14 @@ input {
   gap: 8px;
 }
 
-.email-button {
+.my-button {
   padding: "10px";
   font-size: "16px";
   cursor: "pointer";
   background-color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 4px;
+  padding: 5px 10px;
 }
 
 .my-unique-color {
@@ -156,38 +157,38 @@ a:hover {
   flex-direction: row;
 }
 
-.social-links-section {
+.social-links-section .project-links-section {
   margin-top: 10px;
 }
 
-.social-links {
+.social-links .project-links {
   margin-top: 10px;
 }
 
-.social-link-item {
+.social-link-item .project-link-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
 
-.social-number {
+.social-number .project-number {
   color: #58a6ff;
   text-shadow: var(--text-shining);
   margin-right: 5px;
 }
 
-.social-link {
+.social-link .project-link {
   color: #58a6ff;
   text-shadow: var(--text-shining);
   text-decoration: none;
   margin-right: 10px;
 }
 
-.social-link:hover {
+.social-link:hover .project-link:hover {
   color: #00ff99;
 }
 
-.social-url {
+.social-url .project-url {
   color: var(--secondary-color);
 }
 
@@ -198,4 +199,36 @@ a:hover {
 
 .info-container strong {
   color: var(--primary-color);
+}
+
+.guess-number-input {
+  border: 3px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  outline: none; /* Remove default focus outline */
+}
+
+.guess-number-form {
+  display: flex;
+  gap: 10px;
+  max-width: 100px;
+}
+
+/* Hide default spin buttons */
+.guess-number-input[type="number"]::-webkit-inner-spin-button,
+.guess-number-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.guess-number-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.again-or-exit {
+  display: flex;
+  gap: 10px;
 }

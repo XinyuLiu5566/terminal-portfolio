@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
-const GuessNumberGame = ({ onExit }) => {
-  const [randomNumber] = useState(Math.floor(Math.random() * 100) + 1);
+const GuessNumberGame = () => {
+  const [randomNumber, setRandomNumber] = useState(
+    Math.floor(Math.random() * 100) + 1
+  );
   const [guess, setGuess] = useState("");
   const [message, setMessage] = useState("");
 
@@ -23,27 +25,33 @@ const GuessNumberGame = ({ onExit }) => {
   };
 
   const resetGame = () => {
+    setRandomNumber(Math.floor(Math.random() * 100) + 1);
     setGuess("");
     setMessage("");
   };
 
   return (
     <div>
-      <h1>Guess the Number Game</h1>
-      <form onSubmit={handleGuessSubmit}>
+      <h2>Guess the Number between 1-100</h2>
+      <form onSubmit={handleGuessSubmit} className="guess-number-form">
         <input
+          className="guess-number-input"
           type="number"
           value={guess}
           onChange={handleGuessChange}
           placeholder="Enter your guess"
         />
-        <button type="submit">Guess</button>
+        <button className="my-button" type="submit">
+          Guess
+        </button>
       </form>
+
       <p>{message}</p>
       {message === "Correct! You guessed the number!" && (
-        <button onClick={resetGame}>Play Again</button>
+        <button className="my-button" onClick={resetGame}>
+          Play Again
+        </button>
       )}
-      <button onClick={onExit}>Exit Game</button>
     </div>
   );
 };

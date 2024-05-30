@@ -10,5 +10,5 @@ export const commandFiles = {
   banner: "WelcomeBanner",
   quote: "Quote",
   education: "Education",
-  "little-mysterious-game": "GuessNumberGame.js",
+  game: "GuessNumberGame.js",
 };
