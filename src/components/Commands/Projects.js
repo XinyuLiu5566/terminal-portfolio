@@ -15,7 +15,7 @@ export const projectLinks = [
     description: "You are viewing this",
 
     repo: "https://github.com/XinyuLiu5566/terminal-portfolio",
-    demo: "",
+    demo: "https://xinyuliu.netlify.app",
   },
 ];
 const Projects = () => (

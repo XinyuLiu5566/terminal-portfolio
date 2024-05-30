@@ -41,7 +41,7 @@ function Terminal() {
       const newHistory = [
         ...history,
         <div className="inputLine" key={history.length}>
-          <span className="command-dir">guest@ChrisLiu.com:~$ </span>
+          <span className="command-dir">guest@chrisliu.com:~$ </span>
           <span className="command-input">{command}</span>
         </div>,
       ];
